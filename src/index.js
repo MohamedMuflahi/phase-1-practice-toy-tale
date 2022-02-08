@@ -50,7 +50,8 @@ function RenderObjects(){
         })
           .then((response) => response.json())
           .then((json) => {
-            location.reload();
+            console.log('');
+            card.getElementsByTagName('p').innerHTML = element.likes + 1;
           });
       });
       })
@@ -75,7 +76,17 @@ function addObject(){
 .then(response => response.json())
 .then(data => {
   console.log('success');
-  location.reload();
+  //location.reload();
+  console.log(data[data.length -1 ].id);
+    // let card = document.createElement('div');
+    // card.className = "card";
+    // card.innerHTML = `
+    //   <h2>${nameInput.value}</h2>
+    //   <img src="${imageInput.value}" class="toy-avatar" />
+    //   <p>${0} Likes</p>
+    //   <button class="like-btn" id="${data[data.length -1 ].id}">Like ❤️</button>
+    //   `;
+    //   cardCollection.appendChild(card);
 })
 .catch((error) => {
   console.error('Error:', error);
